@@ -1,4 +1,4 @@
-FROM java
+FROM openjdk:11-jre-slim
 
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends ca-certificates wget \
@@ -16,7 +16,7 @@ USER mirth
 
 VOLUME /opt/mirth-connect/appdata
 
-ARG MIRTH_CONNECT_VERSION=3.6.1.b220
+ARG MIRTH_CONNECT_VERSION=3.7.1.b243
 
 RUN \
   cd /tmp && \

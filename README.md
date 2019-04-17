@@ -1,5 +1,6 @@
 mirth-connect
 =============
+** 4/2019 Update** Upgraded to Mirth 3.7.1 and runs off of openjdk 11 (avoids Oracle license issues), set rhino (js engine) to es6 mode so you can use more modern javascript in transformers
 
 Mirth Connect Docker image with properties read from environment variables.
 

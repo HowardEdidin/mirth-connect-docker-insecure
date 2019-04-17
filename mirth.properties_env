@@ -80,3 +80,16 @@ database.max-connections = 20
 # database credentials
 database.username = $M_DATABASE_USER
 database.password = $M_DATABASE_PASSWORD
+
+# If true, various read-only statements are separated into their own connection pool.
+# By default the read-only pool will use the same connection information as the master pool,
+# but you can change this with the "database-readonly" options. For example, to point the
+# read-only pool to a different JDBC URL:
+# database-readonly.url = jdbc:...
+database.enable-read-write-split = true
+
+# Maximum number of connections allowed for the read-only connection pool
+database-readonly.max-connections = 20
+
+# The language version for the Rhino JavaScript engine.
+rhino.languageversion = es6
