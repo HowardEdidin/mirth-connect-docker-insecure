@@ -40,7 +40,14 @@ Launch the container and mount the configuration file:
        -e M_DATABASE_URL \
        tsystem/mirth-connect
 
-There are many ways to set environment variables (explicitly, copied from your environment, from a separate file) using [-e, --env, --env-file](https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e-env-env-file)
+There are many ways to set environment variables (explicitly, copied from your environment, from a separate file) using [-e, --env, --env-file](https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e-env-env-file), i.e.
+
+    $ docker run -d -P \
+        -e "M_DATABASE=sqlserver" \ 
+        -e "M_DATABASE_USER=mirth" \ 
+        -e "M_DATABASE_PASSWORD=Password123!" \
+        -e "M_DATABASE_URL=jdbc:jtds:sqlserver://localhost/mirthdb" \ 
+        soundphysicians/mirth-connect
 
 ## Running Mirth Connect + Database locally with docker-compose
 _this is for local development only_ do not use Docker for persistent data
