@@ -42,7 +42,7 @@ Launch the container and mount the configuration file:
 
 There are many ways to set environment variables (explicitly, copied from your environment, from a separate file) using [-e, --env, --env-file](https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e-env-env-file), i.e.
 
-** Local SQL Server Database example **
+**Local SQL Server Database example**
 
     $ docker run -d -P \
         -e "M_DATABASE=sqlserver" \ 
@@ -51,7 +51,7 @@ There are many ways to set environment variables (explicitly, copied from your e
         -e "M_DATABASE_URL=jdbc:jtds:sqlserver://localhost/mirthdb" \ 
         soundphysicians/mirth-connect
 
-** Azure SQL Server Database example **
+**Azure SQL Server Database example**
 
     $ docker run -d -P \
         -e "M_DATABASE=sqlserver" \ 
