@@ -17,6 +17,8 @@ USER mirth
 VOLUME /opt/mirth-connect/appdata
 
 ARG MIRTH_CONNECT_VERSION=3.7.1.b243
+ARG FHIR_CONNECTOR_VERSION=3.7.1
+ARG FHIR_CONNECTOR_BUILD=b258
 
 RUN \
   cd /tmp && \
@@ -24,6 +26,13 @@ RUN \
   cd /opt/mirth-connect/ && \
   tar xvzf /tmp/mirthconnect-$MIRTH_CONNECT_VERSION-unix.tar.gz --strip-components=1  && \
   rm -f /tmp/mirthconnect-$MIRTH_CONNECT_VERSION-unix.tar.gz
+
+RUN \
+	cd /tmp && \
+	wget http://downloads.mirthcorp.com/fhir/$FHIR_CONNECTOR_VERSION/fhir-$FHIR_CONNECTOR_VERSION.$FHIR_CONNECTOR_BUILD.zip && \
+	cd /opt/mirth-connect/ && \
+	tar xvf unzip fhir-$FHIR_CONNECTOR_VERSION.$FHIR_CONNECTOR_BUILD.zip && \
+	rm -f /tmp/fhir-$FHIR_CONNECTOR_VERSION.$FHIR_CONNECTOR_BUILD.zip
 
 WORKDIR /opt/mirth-connect
 
