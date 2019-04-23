@@ -30,8 +30,8 @@ RUN \
 RUN \
 	cd /tmp && \
 	wget http://downloads.mirthcorp.com/fhir/$FHIR_CONNECTOR_VERSION/fhir-$FHIR_CONNECTOR_VERSION.$FHIR_CONNECTOR_BUILD.zip && \
-	cd /opt/mirth-connect/ && \
-	tar xvf unzip fhir-$FHIR_CONNECTOR_VERSION.$FHIR_CONNECTOR_BUILD.zip && \
+	cd /opt/mirth-connect/extensions && \
+	unzip /tmp/fhir-$FHIR_CONNECTOR_VERSION.$FHIR_CONNECTOR_BUILD.zip && \
 	rm -f /tmp/fhir-$FHIR_CONNECTOR_VERSION.$FHIR_CONNECTOR_BUILD.zip
 
 WORKDIR /opt/mirth-connect
